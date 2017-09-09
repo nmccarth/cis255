@@ -6,6 +6,12 @@
 <link rel="shortcut icon" href="./favicon.ico" type="image/png" />
 </head>
 <style>
+body {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+}
 a:link {
         color: white;
         background-color: transparent;
@@ -21,46 +27,84 @@ a:hover{
         background-color: #eeeeee;
         text-decoration: none;
 }
+a.discover:hover {
+        color: #3f3f3f;
+        background-color: #18ae90;
+}
+a.visit:hover{
+        color: #3f3f3f;
+        background-color: #2f89c5;
+}
+a.apply:hover{
+        color: #3f3f3f;
+        background-color: #803d9b;
+}
+a.register:hover{
+        color: #3f3f3f;
+        background-color: #d3741f;
+}
+a.oncampus:hover{
+        color: #3f3f3f;
+        background-color: #e2ab03;
+}
+a.find:hover{
+        color: #3f3f3f;
+        background-color: #b03427;
+}
+ul {
+        list-style-type:none;
+}
+li {
+        display:inline;
+}
+li a {
+        padding:0em 4em;
+}
 body {
-  background-image: url('./crossword.png'); }
+  background-image: url('./crossword.png'); 
+}
 </style>
 
 <body style="margin-top:-20px;margin-left:0;margin-right:0">
         <div style="background-image:url(./crossword.png; background-position:center; background-size:cover">
         <div style="background-image:url(./test.png); background-position:center; background-size:cover">
-        <div style="background-color:#990000">
-        <font color="white">
-        <p align="left">
-                <a href="https://svsu.edu/resources/currentstudents">Currents Students</a>
-                <a href="https://svsu.edu/resources/faculty">Faculty</a>
-                <a href="https://svsu.edu/resources/staff">Staff</a>
-                <a href="https://foundation.svsu.edu">Giving</a>
-                <a href="https://svsu.edu/resources/community">Community</a>
-                <a href="https://svsu.edu/parents">Parents</a>
-        <span style="float:right">
-                <a href="https://my.svsu.edu">mySVSU</a>
-                <a href="https://svsu.edu/find/offices">Contact</a>
-                <a href="https://svsu.edu/find/atozindex">A-Z Index</a>
-                <a href="./quicklinks.html">Quicklicks</a>
-                <a href="https://svsu.edu/newsroom">News</a>
-                <a href="https://cse.google.com/cse?cx=007237985502908999491:mq4pehj5ndi&q=&oq=&gs_l=partner.3..0l10.113663.113663.0.114276.1.1.0.0.0.0.120.120.0j1.1.0.gsnos%2Cn%3D13.1..0.0jj1..1ac.1.25.partner..0.1.120.R393tlRtHoA#gsc.tab=0">
-                        Search</a> <!-- Just put link to CSE-->
-        </span>
+        <div style="background-color:#990000; height: 43px;padding-right: 30px; padding-left: 30px;">
+                <font color="white" size="4">
+                <p align="left" style="padding-top: 8px">
+                        <a href="https://svsu.edu/resources/currentstudents">Currents Students</a>
+                        <a href="https://svsu.edu/resources/faculty">Faculty</a>
+                        <a href="https://svsu.edu/resources/staff">Staff</a>
+                        <a href="https://foundation.svsu.edu">Giving</a>
+                        <a href="https://svsu.edu/resources/community">Community</a> 
+                        <a href="https://svsu.edu/parents">Parents</a>
+                <span style="float:right">
+                        <a href="https://my.svsu.edu">mySVSU</a>
+                        <a href="https://svsu.edu/find/offices">Contact</a>
+                        <a href="https://svsu.edu/find/atozindex">A-Z Index</a>
+                        <a href="./quicklinks.html">Quicklicks</a>
+                        <a href="https://svsu.edu/newsroom">News</a>
+                        <a href="https://cse.google.com/cse?cx=007237985502908999491:mq4pehj5ndi&q=&oq=&gs_l=partner.3..0l10.113663.113663.0.114276.1.1.0.0.0.0.120.120.0j1.1.0.gsnos%2Cn%3D13.1..0.0jj1..1ac.1.25.partner..0.1.120.R393tlRtHoA#gsc.tab=0">
+                                Search</a> <!-- Just put link to CSE-->
+                </span>
         </p>
         </font>
         </div>
 
-        <div>
+        <div style="position: relative; left:20%">
         <font color="white">
-        <img src="./SVSU-LOGO-LINEAR-white-and-red.png" />
-        <p align="center">
-                <a href="https://svsu.edu/discover">Discover</a> 
-                <a href="https://svsu.edu/visit">Visit</a>
-                <a href="https://svsu.edu/apply">Apply</a>
-                <a href="https://svsu.edu/officeoftheregistrar/registration">Register</a>
-                <a href="https://svsu.edu/oncampus">On Campus</a>
-                <a href="https://svsu.edu/find">Find</a>
-        </p>
+                <div>
+                        <img src="./SVSU-LOGO-LINEAR-white-and-red.png" />
+                        <br />
+                        <img src="./barcolors.png" />
+                </div>
+                <ul style="position: relative; left:-3em">
+                        <li><a class="discover" href="https://svsu.edu/discover">Discover</a> </a>
+                        <li><a class="visit" href="https://svsu.edu/visit" >Visit</a></a>
+                        <li><a class="apply" href="https://svsu.edu/apply" >Apply</a></a>
+                        <li><a class="register" href="https://svsu.edu/officeoftheregistrar/registration" >Register</a></a>
+                        <li><a class="oncampus" href="https://svsu.edu/oncampus" >On Campus</a></a>
+                        <li><a class="find" href="https://svsu.edu/find" >Find</a></a>
+                </ul>
         </font>
         </div>
         </div>
