@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>Directory Contents</title>
   <link rel="stylesheet" href=".style.css">
-  <script src=".sorttable.js"></script>
 </head>
 
 <body>
