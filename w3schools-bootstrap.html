@@ -2,12 +2,10 @@
 <html lang="en">
         <head>
                 <meta charset="utf-8">
-                <title>X</title>
-                <meta name="description" content="X">
+                <title>Bootstrap 01</title>
                 <meta name="author" content="Neal McCarthy">
                 <link rel="icon" href="./favicon.ico" type="image/png" />
-                <link rel="shortcut icon" 
-                        href="./favicon.ico" type="image/png" />
+                <link rel="shortcut icon" href="./favicon.ico" type="image/png" />
 
 		<!-- Viewport Meta Tag -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +15,13 @@
 			integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         </head>
         <body>
+		<!-- Jumbotron Element -->
+		<div class="jumbotron text-center">
+			<h1>Jumbotrons Strech across the whole screen</h1>
+			<p>This could be the header of a site or w/e.</p>
+		</div>
+		
+		<hr />
 		<!-- container types -->
 		<div class="container">
   			<h1>"container"</h1>
@@ -31,6 +36,7 @@
 		</div>	
 
 
+		<hr />
 		<!-- Bootstrap pages have 12 columns that can be split up -->		
 		<div class="container-fluid">
   			<h1>Bootstrap Columns</h1>
@@ -46,7 +52,7 @@
 		</div>
 
 		<div class="container-fluid">
-  			<h1>Bootstrap Columns</h1>
+			<br />
   			<p>Here are two unequal columns.</p>
   			<div class="row">
     				<div class="col-sm-4" 
@@ -57,6 +63,7 @@
 		</div>
 
 
+		<hr />
 		<!-- Bootstrap elements that are different than HTML -->
 		<!-- Heading elements -->
 		<div class="container">
@@ -69,18 +76,83 @@
   			<h6>h6 heading <small>secondary text</small></h6>
 		</div>
 
+		<hr />
 		<!-- mark element -->
 		<div class="container">
   			<h1>Highlight Text</h1>    
   			<p>Use the mark element to <mark>highlight</mark> text.</p>
 		</div>	
 
+		<hr />
 		<!-- abbr element -->
 		<div class="container">
   			<h1>Abbreviations</h1>
   			<p>The abbr element is used to mark up an abbreviation or acronym:</p>
   			<p>The <abbr title="World Health Organization">WHO</abbr> 
 				was founded in 1948.</p>
+		</div>
+
+		<hr />
+		<!-- Block quotes -->
+		<div class="container">
+  			<h1>Blockquotes</h1>
+  			<p>The blockquote element is used to present content from 
+				another source:</p>
+  			<blockquote>
+    				<p>Left block quote</p>
+    				<footer>me</footer>
+  			</blockquote>
+			<br />
+			<blockquote class="blockquote-reverse">
+				<p>Right block quote</p>
+				<footer>me</footer>
+			</blockquote> 
+		</div>
+
+
+		<hr />
+		<!-- dl element for lists -->
+		<div class="container">
+			<h1>Description Lists</h1>    
+			<p>The dl element indicates a description list:</p>
+			<dl>
+				<dt>Coffee</dt>
+					<dd>- black hot drink</dd>
+				<dt>Milk</dt>
+					<dd>- white cold drink</dd>
+			</dl>     
+		</div>
+
+
+		<hr />
+		<!-- code element -->
+		<div class="container">
+  			<h1>Code Snippets</h1>
+  			<p>Inline snippets of code should be embedded in the code element:</p>
+  			<p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> 
+				defines a section in a document.</p>
+		</div>
+
+		<hr />
+		<!-- kdb element -->
+		<div class="container">
+  			<h1>Keyboard Inputs</h1>
+  			<p>To indicate input that is typically entered via the keyboard, use the kbd element:</p>
+  			<p>Use <kbd>ctrl + p</kbd> to open the Print dialog box.</p>
+		</div>
+
+		<hr />
+		<!-- pre element -->
+		<div class="container">
+			<h1>Multiple Code Lines</h1>
+			<p>For multiple lines of code, use the pre element:</p>
+			<pre>
+Text in a pre element
+is displayed in a fixed-width
+font, and it preserves
+both      spaces and
+line breaks.
+			</pre>
 		</div>
 
 		<!-- Place Javascript at end for faster loading -->
