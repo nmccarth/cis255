@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Menu for CIS255">
+		<meta name="author" content="Neal McCarthy">
+
+		<title>CIS255 Menu - Neal McCarthy</title>
+
+		<link rel="icon" href="./favicon.ico" type="image/png" />
+		<link rel="shortcut icon" href="./favicon.ico" type="image/png" />
+		<!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<style>
+			body {
+				padding-top: 54px;
+			}
+			@media (min-width: 992px) {
+				body {
+					padding-top: 56px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Neal McCarthy</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#" onclick="return show('assignments','examples');">Assignments</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="return show('examples','assignments');">Examples</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://github.com/nmccarth/">
+						Github</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+
+		<!-- Page Content -->
+		<!-- Assigments -->
+		<div class="container assignments">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+				<h1 class="mt-5">CIS255 Assignments</h1>
+				<ul class="list-group" style="text-align: left;">
+					<li class="list-group-item"><a href="../cis255/svsu.html">
+						01 HTML</a></li>
+					<li class="list-group-item"><a href="./02-css-exercise.html">
+						02 CSS Exercise</a></li>
+					<li class="list-group-item"><a href="
+					https://publicdomainworksblog.wordpress.com/">
+						02a WordPress Blog</a></li>
+					<li class="list-group-item"><a href="
+					https://mimajumd.wordpress.com/2017/09/20/binging-with-babish-cubanos-from-chef/">
+						02a WordPress Post 1</a></li>
+					<li class="list-group-item"><a href="https://apolisan.wordpress.com/2017/09/20/ascending-against-gravity/">
+						02a WordPress Post 2</a></li>
+					<li class="list-group-item"><a href="./w3schools-bootstrap.html">
+						03 Bootstrap Exercise</a></li>
+					<li class="list-group-item"><a href="./editorial/index.html">
+						03 Bootstrap Program</a></li>
+				</ul>
+				</div>
+			</div>
+		</div> <!-- End Assignments -->
+
+		<!-- Examples -->
+		<div class="container examples" style="display: none">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+				<h1 class="mt-5">Examples</h1>
+				<ul class="list-group" style="text-align: left;">
+					<li class="list-group-item"><a href="./w3schools.html">
+                                		W3Schools Example</a></li>
+                        		<li class="list-group-item"><a href="./tables.html">
+                                		Tables Example</a></li>
+                        		<li class="list-group-item"><a href="calculator.html">
+                                		Calculator Example</a></li>
+                        		<li class="list-group-item"><a href="./css-example.html">
+                                		CSS Example</a></li>
+                        		<li class="list-group-item"><a href="./advanced-css.html">
+                                		CSS Positioning Example</a></li>
+                        		<li class="list-group-item"><a href="./w3schools-bootstrap.html">
+                                		W3Schools Bootstrap Examples</a></li>
+				</ul>
+				</div>
+			</div>
+		</div> <!-- End Examples -->
+
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/popper/popper.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- More JS -->
+		<script>
+			function show(shown, hidden) {
+  				document.getElementById(shown).style.display='block';
+  				document.getElementById(hidden).style.display='none';
+  				return false;
+			}
+		</script>
+	</body>
+</html>
