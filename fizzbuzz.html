@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8"> 
+</head>
+<body>
+
+    <script type="text/javascript">
+        for(i = 1; i < 101; i++){
+            var output = "";
+            if(i % 3 == 0) output = "fizz";
+            if(i % 5 == 0) output += "buzz";
+            console.log(output || i);
+        }
+    </script>
+</body>
+</html>
