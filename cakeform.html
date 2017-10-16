@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>Cake Picker</title>
+                <meta name="description" content="Select cake and get price">
+                <meta name="author" content="Neal McCarthy">
+                <link rel="icon" href="./favicon.ico" type="image/png" />
+                <link rel="shortcut icon" href="./favicon.ico" type="image/png" />
+
+		<!-- Viewport Meta Tag -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+			integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        </head>
+        <body>
+		<div class="container">
+		<form action="" id="cakeform" onsubmit="return false;">
+   			<fieldset>
+    				<legend>Make your cake!</legend>
+				<label >Size Of the Cake</label><br />
+    				<input type="radio"  name="selectedcake" value="Round6"
+    					onclick="calculateTotal()" />
+					Round cake 6" -  serves 8 people ($20)<br />
+    				<input type="radio"  name="selectedcake" value="Round8"
+    					onclick="calculateTotal()" />
+					Round cake 8" - serves 12 people ($25)<br />
+    				<input type="radio"  name="selectedcake" value="Round10"
+    					onclick="calculateTotal()" />
+					Round cake 10" - serves 16 people($35)<br />
+    				<input type="radio"  name="selectedcake" value="Round12"
+    					onclick="calculateTotal()" />
+					Round cake 12" - serves 30 people($75)<br />
+					<input type="radio"  name="selectedcake" value="Round12"
+    					onclick="calculateTotal()" />
+					Round cake 12" - serves 30 people($75)<br />
+    				<input type="radio"  name="selectedcake" value="Round6"
+    					onclick="calculateTotal()" />
+					Rectangle cake 6" -  serves 8 people ($20)<br />
+    				<input type="radio"  name="selectedcake" value="Round8"
+    					onclick="calculateTotal()" />
+					Rectangle cake 8" - serves 12 people ($25)<br />
+    				<input type="radio"  name="selectedcake" value="Round10"
+    					onclick="calculateTotal()" />
+					Rectangle cake 10" - serves 16 people($35)<br />
+    				<input type="radio"  name="selectedcake" value="Round12"
+    					onclick="calculateTotal()" />
+					Rectangle cake 12" - serves 30 people($75)<br />
+		
+				<label >Filling</label><br />
+			
+    				<select id="filling" name='filling'
+    					onchange="calculateTotal()">
+    					<option value="None">Select Filling</option>
+    					<option value="Lemon">Lemon($5)</option>
+    					<option value="Custard">Custard($5)</option>
+    					<option value="Fudge">Fudge($7)</option>
+    					<option value="Mocha">Mocha($8)</option>
+    					<option value="Raspberry">Raspberry($10)</option>
+    					<option value="Pineapple">Pineapple($5)</option>
+    					<option value="Dobash">Dobash($9)</option>
+    					<option value="Mint">Mint($5)</option>
+    					<option value="Cherry">Cherry($5)</option>
+    					<option value="Apricot">Apricot($8)</option>
+    					<option value="Buttercream">Buttercream($7)</option>
+    					<option value="Chocolate Mousse">Chocolate Mousse($12)</option>
+   				</select>
+    				<br/>
+    				<p>
+    				<label for='includecandles' class="inlinelabel">
+    					Include Candles($5)</label>
+    				<input type="checkbox" id="includecandles" name='includecandles'
+    					onclick="calculateTotal()" />
+   				</p>
+				<br />
+				<p>
+					Quantity<input type="text"  name="quantity" id="quantity" placeholder="1" oninput="calculateTotal()"/>		
+				</p>
+    				<p>
+    				<label class="inlinelabel" for='includeinscription'>
+    					Include Inscription($20)</label>
+    				<input type="checkbox" id="includeinscription"
+    					name="includeinscription" onclick="calculateTotal()" />
+			
+    				<input type="text"  id="theinscription"
+    						name="theinscription" value="Enter Inscription"  />
+    				</p>
+    				<div id="totalPrice"></div>
+			
+    			</fieldset>
+		</div>
+
+		<!-- Place Javascript at end for faster loading -->
+		<!-- Cakefrom js -->
+		<script src="./cakeform.js"></script>
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </body>
+</html>
