@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript &amp; jQuery - Chapter 6: Events - Event Attributes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/c06.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1>List King</h1>
+      <h2>New Account</h2>
+      <form method="post" action="http://www.example.org/register">
+
+        <label for="usernameac">Create a username(A-C): </label>
+        <input type="text" id="usernameac" onblur="checkUsername(this)" />
+        <div id="feedbackac"></div>
+
+        <label for="username">Create a username(D-H): </label>
+        <input type="text" id="usernamedh" onblur="checkUsername(this)" />
+        <div id="feedbackdh"></div>
+
+        <label for="usernameim">Create a username(I-M): </label>
+        <input type="text" id="usernameim" onblur="checkUsername(this)" />
+        <div id="feedbackim"></div>
+
+        <label for="usernamenp">Create a username(N-P): </label>
+        <input type="text" id="usernamenp" onblur="checkUsername(this)" />
+        <div id="feedbacknp"></div>
+
+        <label for="usernameqz">Create a username(Q-Z): </label>
+        <input type="text" id="usernameqz" onblur="checkUsername(this)" />
+        <div id="feedbackqz"></div>
+
+        <input type="submit" value="sign up!" />
+
+      </form>
+    </div>
+    <script src="js/event-attributes.js"></script>
+  </body>
+</html>
