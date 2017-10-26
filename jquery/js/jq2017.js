@@ -20,7 +20,7 @@ $(document).ready(function() {
 	$('#tblData tr:first').append("<th>Insert</th>"); //header
 	$('#tblData').find('tr').each(function(){
 		$(this).find('td').eq(3).after(
-			'<td><input class="insert" type="button" value="Insert" /></td>');
+			'<td><input class="btn btn-primary insert" type="button" value="Insert" /></td>');
 	});
 
 	//insert button functionality
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		var randomCountry = faker.address.country(); //random country name
 		//contruct new column with above fake data
 		var newCol = '<tr> <td>'+randomName+'</td><td>'+randomAge+'</td><td>'+randomCountry
-		newCol = newCol+'<td><input class="delete" type="button" value="Delete" /></td><td><input class="insert" type="button" value="Insert" /></td> </tr>'
+		newCol = newCol+'<td><input class="btn btn-danger delete" type="button" value="Delete" /></td><td><input class="btn btn-primary insert" type="button" value="Insert" /></td> </tr>'
 		//create the new column with above construction
 		$(this).closest('tr').before(newCol);
 	}); 

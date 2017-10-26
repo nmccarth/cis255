@@ -18,3 +18,17 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
 	background-color: #ddeedd;
 }
+
+#tableHolder {
+	height: 50vh;
+        overflow-y: auto;
+}
+
+#tableHolder > #tblData {
+	width: 100%
+}
+
+input {
+	height: 100%;
+	width: 100%;
+}
