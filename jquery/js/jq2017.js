@@ -25,8 +25,16 @@ $(document).ready(function() {
 
 	//insert button functionality
 	$('#tblData').on('click', '.insert', function() {
-		$(this).closest('tr').before(
-			'<tr> <td>John</td> <td>111</td><td>Portugal</td><td><input class="delete" type="button" value="Delete" /></td><td><input class="insert" type="button" value="Insert" /></td> </tr>');
-	});
+		//fake data for insert
+		faker.locale = "en_US"; //set locale for faker
+		var randomName = faker.name.firstName() +' '+faker.name.lastName(); //random first and last name
+		var randomAge =  Math.floor(Math.random()*(100-13+1)+13); //random age between 13 and 100
+		var randomCountry = faker.address.country(); //random country name
+		//contruct new column with above fake data
+		var newCol = '<tr> <td>'+randomName+'</td><td>'+randomAge+'</td><td>'+randomCountry
+		newCol = newCol+'<td><input class="delete" type="button" value="Delete" /></td><td><input class="insert" type="button" value="Insert" /></td> </tr>'
+		//create the new column with above construction
+		$(this).closest('tr').before(newCol);
+	}); 
 
 }); // end $(document).ready(function() 
