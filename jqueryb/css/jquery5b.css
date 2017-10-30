@@ -1,0 +1,239 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  background: gray;
+}
+
+html {
+    min-height: 100%;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: linear-gradient(to bottom right, #3D4258, #6670A0, #9688B4);
+    line-height: 1.5;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.accordion {
+    background: linear-gradient(to bottom right, white, #F8F8F8);
+    max-width: 400px;
+    background: white;
+    margin: 0 auto;
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 35px 50px -25px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+    border-bottom: 1px solid #DDE0E7;
+    color: #2a313a;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 1.5rem;
+}
+
+.accordion-header:hover {
+    background: #F6F7F9;
+}
+
+.accordion-content {
+    display: none;
+    border-bottom: 1px solid #DDE0E7;
+    background: #F6F7F9;
+    padding: 1.5rem;
+    color: #4a5666;
+}
+
+.accordion-header::before {
+    content: '';
+    vertical-align: middle;
+    display: inline-block;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    background-color: #B1B5BE;
+    margin-right: .75rem;
+}
+
+.active.accordion-header::before {
+    background-color: #FC6468;
+}
+
+.tabs {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tab-list {
+    padding-bottom: 1rem;
+}
+
+.tab {
+    border: 1px solid transparent;
+    border-radius: 40px;
+    display: inline-block;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    color: rgba(255, 255, 255, .6);
+    font-weight: 700;
+    background: rgba(10, 20, 30, .2);
+}
+
+.tab.active {
+    color: white;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, .6);
+}
+
+.tab-content {
+    background: linear-gradient(to bottom right, white, #F8F8F8);
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 35px 50px -25px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 1.5rem;
+    color: #4a5666;
+}
+
+.show {
+    display: block;
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 400px;
+    background: rgba(10, 20, 30, .85);
+}
+
+nav::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+    padding: 1rem;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: rgba(10, 20, 30, .9);
+}
+
+nav ul li a:focus {
+    color: white;
+}
+
+nav ul li a:not(:only-child)::after {
+    padding-left: 4px;
+    content: ' ▾';
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a {
+    background: transparent;
+    color: #4a5666;
+    border-bottom: 1px solid #DDE0E7;
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:focus {
+    background: #e7e9ef;
+    color: #111;
+}
+
+
+.dropdown {
+    display: none;
+    position: absolute;
+    margin-top: 6px;
+    background: linear-gradient(to bottom right, white, #F8F8F8) !important;
+    box-shadow: 0 4px 10px rgba(10, 20, 30, .4);
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+.dropdown:hover::after {
+    border-bottom: 8px solid #F6F7F9;
+}
+
+nav#scroll {
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    background: #1f1f1f;
+    opacity: 0.5;
+    color: white;
+    font-size: 1.6rem;
+    height: 30px;
+    line-height: 30px;
+    transition: .5s all ease;
+}
+
+nav#scroll.active {
+    background: white;
+    color: #111;
+}
+
+
+#begin {
+    height: 30vh;
+    padding-top: 5vh;
+    margin-bottom: 10vh;
+    text-align: center;
+    color: #fff;
+    background: #111;
+}
+
+#smooth {
+	padding-top: 5vh;
+}
+
+.slider {
+	position: relative;
+	margin-bottom: 10vh;
+	width: 805px;
+	margin-left: -5vw;
+	border: solid;
+}
+
