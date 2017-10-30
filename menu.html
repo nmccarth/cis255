@@ -23,6 +23,11 @@
 					padding-top: 56px;
 				}
 			}
+			                                                                                                                
+			.tableholder {
+				        height: 50vh;
+					overflow-y: auto;
+			}
 		</style>
 	</head>
 	<body>
@@ -56,7 +61,9 @@
 		<div class="container assignments" id="assignments">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h1 class="mt-5">CIS255 Assignments</h1>
+				<h1 class="mt-5" title="Scroll on list to see more">
+					CIS255 Assignments</h1>
+				<div class="tableholder">
 				<ul class="list-group" style="text-align: left;">
 					<li class="list-group-item"><a href="../cis255/svsu.html">
 						01 HTML</a></li>
@@ -84,10 +91,13 @@
 						(2) DOM event handler</a></li>
 					<li class="list-group-item"><a href="./jsevents/event-listener.html">
 						(3) event listener</a></li>
-					<li class="list-group-item"><a href="./jquery/jq2017">
-						05 JQUERY - Remove HTML Table Rows</a></li>
+					<li class="list-group-item"><a href="./jquerya/jq2017">
+						05a JQUERY - Remove HTML Table Rows</a></li>
+					<li class="list-group-item"><a href="./jqueryb/jqueryb.html">
+						05b JQUERY - Add Elements to DOM</a></li>
 
 				</ul>
+				</div>
 				</div>
 			</div>
 		</div> <!-- End Assignments -->
@@ -96,7 +106,9 @@
 		<div class="container examples" id="examples" style="display: none">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-				<h1 class="mt-5">Examples</h1>
+				<h1 class="mt-5" title="Scroll on list to see more">
+					Examples</h1>
+				<div class="tableholder">
 				<ul class="list-group" style="text-align: left;">
 					<li class="list-group-item"><a href="./w3schools.html">
                                 		W3Schools Example</a></li>
@@ -115,6 +127,7 @@
 					<li class="list-group-item"><a href="./dom.html">
 						DOM Examples</a></li>
 				</ul>
+				</div>
 				</div>
 			</div>
 		</div> <!-- End Examples -->
