@@ -133,7 +133,7 @@ jQuery(document).ready(function() {
 	var slider = "<div class='slider'>" //open
 	slider += "<div><img src='https://my.mixtape.moe/kuxapj.jpg'></div>"
 	slider += "<div><img src='https://my.mixtape.moe/xxzufy.jpg'></div>"
-	slider += "<div><img src='https://my.mixtape.moe/zwcsqo.jpg'></div>"
+	slider += "<div><img src='https://my.mixtape.moe/hdwybv.jpg'></div>"
 	slider += "</div>" //close
 	jQuery("#nealsholder").append(slider);
 
