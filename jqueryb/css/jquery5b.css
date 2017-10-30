@@ -231,9 +231,9 @@ nav#scroll.active {
 
 .slider {
 	position: relative;
+	margin: auto;
 	margin-bottom: 10vh;
 	width: 805px;
-	margin-left: -5vw;
 	border: solid;
 }
 

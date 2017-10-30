@@ -95,14 +95,16 @@ jQuery(document).ready(function() {
 
 	//Create Change on Scroll
 	var scroll = "<nav id='scroll'>Navigation</nav>"
-	scroll += "<main id='begin'>Top left will invert after you seee this.</main>"
+	scroll += "<main id='begin'>Top left will invert after you see this.</main>"
 	jQuery("#nealsholder").append(scroll);
 
 	//Change on Scroll functionality
 	$(window).on("scroll", function() {
 		    var position = $("#begin").offset();
 
-		    if ($(window).scrollTop() > position.top - 500) {
+		    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		    h = h - 70;
+		    if ($(window).scrollTop() > position.top - h) {
 			            $("nav").addClass("active");
 			        } else {
 					        $("nav").removeClass("active");
