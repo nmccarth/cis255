@@ -24,12 +24,13 @@ jQuery(document).ready(function() {
 	var nealsmodal = "<div id='nealsmodal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'>&times;</button>"
 	nealsmodal += "<h4 class='modal-title'>Modal Header</h4></div><div class='modal-body'><p>Some text in the modal.</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>"
 	nealsmodal += "Close</button></div></div></div>"; //construct modal over 3 lines to avoid linewrap
-	jQuery('#nealsholder').append(nealsmodal); //add modal to DOM
+	//jQuery('#nealsholder').append(nealsmodal); //add modal to DOM
 
 
 	//trigger modal on click
 	jQuery("p").click(function() {
-		jQuery("#nealsmodal").modal();
+		// jQuery("#nealsmodal").modal(); // this is if you use the append first.
+		jQuery(nealsmodal).modal();
 	});
 
 	//create accordian 
