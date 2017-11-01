@@ -1,0 +1,338 @@
+<!--
+
+	Read through the following code and comments. 
+	
+	Once you feel you understand how the game works try and complete the chalanges at the bottom.
+	
+-->
+
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello World</title>
+  <style>
+	* {padding: 0; margin: 0}
+</style>
+</head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
+<body>
+	<script type="text/javascript">
+	
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 1) Create the renderer and html objects
+	// 2) Build pixi.js structure (Player, bullets, Timer, ect.. )
+	// 3) Setup pixi.js objects (Player, bullets, Timer, ect.. )
+	// 4) Animate all objects in the game scene with a continuous loop.
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//Create the renderer... mostly setting pixi options
+	var renderer = PIXI.autoDetectRenderer(900, 900,{antialias: false, transparent: false, resolution: 1});
+	//change the html styles for the canvas
+	renderer.view.style.position = "absolute";
+	renderer.view.style.display = "block";
+	//a pixi function that helps with resizing
+	renderer.autoResize = true;//to make sure the canvas is resized to match the resolution, set autoResize to true.
+	renderer.resize(window.innerWidth, window.innerHeight);//then resize from 900,900
+	window.addEventListener("resize", function(event){ //if the window changes size
+		renderer.resize(window.innerWidth, window.innerHeight);//resize again
+	});
+	//Add the canvas to the HTML document
+	newcanvas = document.body.appendChild(renderer.view);
+	
+	
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 2) Build pixi.js structure (Player, bullets, Timer, ect.. )
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	//global setup		//////////////////////////////////////////////////////////////
+	//Create a container object called the `stage` which holds EVERYTHING
+	var stage = new PIXI.Container();
+	//usefull when spawning randomly
+	function randint(min,max){
+		return Math.floor(Math.random()*(max-min+1)+min);
+	};
+	//returns true if these 2 pixi objects are coliding.
+	function checkcolision(a, b){
+		var ab = a.getBounds();//getbounds is a pixi function
+		var bb = b.getBounds();
+		return ab.x + ab.width > bb.x && ab.x < bb.x + bb.width && ab.y + ab.height > bb.y && ab.y < bb.y + bb.height;
+	};
+	//player class		this helps add properties to the player like health and in the futer, power ups.
+	function player(){
+		this.g = new PIXI.Graphics();//this will be the visual object what we control in gameloop function to make objects move
+			this.g.lineStyle(4, 0x00ff00, 1);
+			this.g.beginFill(0x66CCFF);
+			this.g.drawRect(0, 0, 30, 30);
+			this.g.endFill();
+		this.health = 3;
+	};
+	//base bullet class		this can be added onto later.
+	function bullet(){//function to create a bullet with the following properties
+		this.g = new PIXI.Graphics();
+			this.g.beginFill(0x66CCFF);
+			this.g.drawRect(0, 0, 5, 50);
+			this.g.endFill();
+			
+		this.speed = 10;
+		this.direction = randint(1,4);//this determines which side of the screen the bullet will come from.
+		this.g.x = 0;
+		this.g.y = 0;
+		this.vx = 10 + this.speed;
+		this.vy = 10 + this.speed;
+		//throw in randomness
+		if(this.direction == 1 || this.direction == 3 ){//if left or right
+			this.g.y = randint(0,window.innerHeight);//random y pos
+			this.g.rotation = -3.14159/2;
+			this.vy = 0;
+			if(this.direction == 3){
+				this.g.x = window.innerWidth-50;
+				this.g.rotation = -3.14159/2;
+				this.vx *= -1;
+			}else{
+			}
+		}else if (this.direction == 2 || this.direction == 4){ // top or bottom
+			this.g.x = randint(0,window.innerWidth);//random x pos
+			this.vx = 0;
+			if(this.direction == 4){
+				this.g.y = window.innerHeight-50;
+				this.vy *= -1;
+			}
+		}
+		this.traveled = 0;
+		this.damage = 1;
+	};
+	var bullets = [];//this array will hold all of our bullets
+	var outofboundbullets = [];
+	
+	
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 3) Setup pixi.js objects (Player, bullets, Timer, ect.. )
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//create global objects
+	var p = new player;
+	var timertext, lastscroretext, highscoretext, hits, hittext = 0;
+	var highscorecount = 0;
+	var time = 0;
+	var frame = 0;
+	var lastbulletspawntime = 0;
+	var spawnfreq = 1
+	var gameover = false;
+		
+	//function to set up all other objects and add them to stage.
+	function setup() {
+		//Initialize the game objects, set the game `state` to `play`
+		//and start the 'gameLoop'
+		
+		//We are going to create rwo different scenes. gameScene, and gameOverScene
+		gameScene = new PIXI.Container();//containers can be used to make transformations to many objects at once.usefull in creating varieing anchor/piviot points too.
+			stage.addChild(gameScene);
+		gameOverScene = new PIXI.Container();
+		gameOverScene.visible = false;//visible is a property of the container object. We will hide this container untill game over
+			stage.addChild(gameOverScene);
+
+		//add the player		
+		gameScene.addChild(p.g);
+
+		//set player number of hits --neal
+		hits = 0;
+		
+		//create the timer graphics
+		//pixi style is a object that is applied to text graphics. 
+		var style = new PIXI.TextStyle({
+			fontFamily: 'Arial',
+			fontSize: 36,
+			fontStyle: 'italic',
+			fontWeight: 'bold',
+			fill: ['#aaffaa', '#00ff00'] // gradient
+		});
+		var style2 = new PIXI.TextStyle({
+			fontFamily: 'Arial',
+			fontSize: 28,
+			fontStyle: 'italic',
+			fontWeight: 'bold',
+			fill: ['#aaffaa', '#00ff00'] // gradient
+		});
+		
+		timertext = new PIXI.Text('0s',style);//style is applied here
+		timertext.x = 10;
+		timertext.y = 50;
+		/*
+		lastscroretext = new PIXI.Text('0s',style2);
+		lastscroretext.x = 10;
+		lastscroretext.y = 50;
+		*/
+		highscoretext = new PIXI.Text(highscorecount,style2);
+		highscoretext.x = 10;
+		highscoretext.y = 80 //changed to 50 by neal;
+
+		//health text by neal
+		hittext = new PIXI.Text(hits,style)
+		hittext.y = 10;
+		hittext.y = 10
+
+		
+		gameScene.addChild(timertext);
+		/*
+		gameScene.addChild(lastscroretext);
+		*/
+		gameScene.addChild(highscoretext);
+		gameScene.addChild(hittext);//added by neal
+	
+	
+	//log scenes
+	//console.log("~~ Game Scene ~~");
+	//console.log(gameScene);
+	//console.log("~~ GameOver Scene ~~");
+	//console.log(gameOverScene);
+	
+		
+		//state is a pixie.js variabe (already declared) this state determines what function is called in the game loop.
+		state = play; 
+
+		//Start the game loop
+		gameLoop();
+	};
+
+	
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// 4) Animate all objects in the game scene with a continuous loop.
+	//									/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	function gameLoop() {
+		//Loop this function 60 times per second
+		requestAnimationFrame(gameLoop);
+
+		//Update the current game state
+		state();
+
+		//Render the stage
+		renderer.render(stage);
+	};
+
+	function play() {
+		//variables
+		var gamescene = stage.children[0];
+		
+		//All the game logic goes here
+		
+		//move the player to the mouse
+		var mx = renderer.plugins.interaction.mouse.global.x;
+		var my = renderer.plugins.interaction.mouse.global.y;
+		p.g.x = mx-15;
+		p.g.y = my-15;
+		
+		//check if we should spawn a new bullet
+		if(time - lastbulletspawntime > spawnfreq){
+			newbullet = new bullet();
+			bullets.push(newbullet);
+			gamescene.addChild(newbullet.g);
+			lastbulletspawntime = time;
+		}
+		//lets move the bullets
+		bullets.forEach(function(b,i){
+			b.g.x += b.vx;
+			b.g.y += b.vy;
+			//after it moved has it hit anything?
+			if(checkcolision(p.g,b.g)){
+				hits++;
+				hittext.setText(hits);
+			}
+			//lets track how far this bullet has moved with absolute value.
+			if(Math.abs(b.vx) > Math.abs(b.vy)){
+				b.traveled += Math.abs(b.vx);
+			}else{
+				b.traveled += Math.abs(b.vy);
+			}
+			//lets see if the bullet has traveled farther then the bounds of the screen
+			//if so do record bullete in out of bounds array for deletion.
+			//we save the pos of the bullet within the array so we can splice it out later.
+			if(b.direction == 1 || b.direction == 3 ){
+				if(b.traveled > window.innerWidth){
+					outofboundbullets.push(i);
+				}
+			}else{
+				if(b.traveled > window.innerHeight){
+					outofboundbullets.push(i);
+				}
+			}
+		});
+		if(time > 20){
+			gameover=true;
+		}
+		if(gameover == true){
+		//destroy the pixi graphics to free up memory.
+			bullets.forEach(function(b,i){
+				b.g.destroy();
+			});
+			
+			//remove the rest of the bullet information by clearing the arrays
+			bullets = [];
+			outofboundbullets = [];
+
+
+			//simple game restart---------
+			gameover = false;
+			console.log(hits);
+			console.log(highscorecount)
+			if(hits > highscorecount || ! hiscoreount){
+				highscorecount = hits;
+				highscoretext.setText("High score: " + Math.round(hits));
+			}			
+			//reset health by neal
+			hits = 0;
+			hittext.setText(hits);
+
+			time = 0;
+			frame = 0;
+			lastbulletspawntime = 0;
+		}
+		//if game continues remove out of bound bullets, if any.
+		outofboundbullets.forEach(function(b,i){
+			//console.log(bullets);
+			bullets[b].g.destroy();
+			//remove this bullet from bullet list by index.
+			bullets.splice(b,1);
+		//console.log(bullets);
+		});
+		outofboundbullets = [];
+		//incremement frame and time
+		time += 1/60;
+		frame += 1;
+		if(frame == 60){
+			frame = 0;
+			timertext.setText(Math.round(time) + "s");
+		}
+	};
+
+	function end() {
+	  //All the code that should run at the end of the game
+	};
+	
+	
+	setup();
+	/*
+	Challanges
+	
+	1) Incorperate the player.health variable to decress when a bullet hits the player. Set gameover when the player has 0 health.
+	
+	2) Incorperate levels of difficulty. Whether its increasing in difficulty over time or have levels to select from.
+	
+	3) Change the bullet class to point at, and travel towards the players current location at the time of spawn. (Google is your friend)
+	
+	4) Add a new type of bullet class and get creative. How can this bullet be more chalanging to dodge?
+	
+	5) Go create your own game.
+	
+	
+	*/
+	
+	
+	</script>
+</body>
+</html>
