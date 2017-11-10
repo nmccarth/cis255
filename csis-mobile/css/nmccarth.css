@@ -1,0 +1,37 @@
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #777;
+}
+
+.scroll2 {
+	width: 1775px;
+}
+
+::-webkit-scrollbar
+{
+  width: 4px;  /* for vertical scrollbars */
+  height: 4px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #d3d3d3;
+}
