@@ -2,7 +2,7 @@
 <html> 
 
 	<head> 
-	
+
 		<title>Basic mobile app</title> 
 		<meta charset="utf-8" />  
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -11,69 +11,104 @@
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="css/nmccarth.css" />
 	</head> 
-	
+
 	<body> 
 		<!-- Navigation -->
-    		<nav class="navbar  navbar-dark bg-dark fixed-top">
-      			<div class="container">
+		<nav class="navbar  navbar-dark bg-dark fixed-top">
+			<div class="container">
 				<span>
 					<button onClick="goBack()" class="btn bg-inverse" type="button" aria-expanded="false" aria-label="Go Back">
 						<i class="fa fa-arrow-left bg-inverse" aria-hidden="true" ></i>
 					</button>
 					<a class="navbar-brand" href="#" style="padding-left: 5px;">CSIS at SVSU</a>
 				</span>
-        			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          				<span class="navbar-toggler-icon"></span>
-        			</button>
-        			<div class="collapse navbar-collapse" id="navbarResponsive">
-          				<ul class="navbar-nav ml-auto">
-            					<li class="nav-item">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="about.html">About</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="news.html">News</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="contact.html">Contact</a>
-            					</li>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="mission.html">Mission Statement</a>
-            					</li>
+							<a class="nav-link" href="about.html">About</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="program.html">Program Requirements</a>
-            					</li>
+							<a class="nav-link" href="news.html">News</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="course.html">Course Sequence</a>
-            					</li>
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="career.html">Careers</a>
-            					</li>
+							<a class="nav-link" href="mission.html">Mission Statement</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="faculty.html">Faculty</a>
-            					</li>
+							<a class="nav-link" href="program.html">Program Requirements</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="why.html">Why study CSIS?</a>
-            					</li>
-          				</ul>
-        			</div>
-      			</div>
-    		</nav>
+							<a class="nav-link" href="course.html">Course Sequence</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="career.html">Careers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="faculty.html">Faculty</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="why.html">Why study CSIS?</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		<!-- page content -->
 		<div id="wrapper" class="container center">
-			<h1 class="pt-3"> Put an email contact form here </h1>
+			<i class="fa fa-phone" aria-hidden="true"></i>
+			<h1 class="pb-1"> Contact us with any questions </h1>
+			<form>
+				<div class="form-group row">
+					<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" placeholder="John Smith" required>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" placeholder="email@example.com" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputMessage" class="col-sm-2 col-form-label">Message</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="4" name="inputMessage"></textarea>	
+					</div>
+				</div>
+				<div class-"form-group row">
+					<div class="col-sm-10">
+						<input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+					</div>
+				</div>
+
+			</form>
+			<div class="container pt-5">
+				<h1> Or call us</h1>
+				<i class="fa fa-phone" aria-hidden="true"></i>
+				<a href="tel:+1-989-964-2044">
+					Call (989) 964-2044
+				</a>
+			</div>
 		</div>		
 
 
-		 <!-- Footer -->
-    		<footer class="navbar bg-dark fixed-bottom">
-      			<div class="container">
-        			<p class="m-0 text-center text-white">Footer Content</p>
-      			</div>
-    		</footer>
+		<!-- Footer -->
+		<footer class="navbar bg-dark fixed-bottom">
+			<div class="container">
+				<p class="m-0 text-center text-white">Footer Content</p>
+			</div>
+		</footer>
 
 		<!-- Javascript at end -->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
