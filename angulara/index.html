@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app1" ng-init="courses = ['cs105','cs145','cs116','cs216']; courses2 = ['cs105','cs145','cs116','cs216','cis255','cis355','cis386','cis311','cs333','cs433']" lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>07a Angular Part 1</title>
+
+	</head>
+	<body>
+		<div ng-controller="ctrl1">
+			<span>Values:</span>
+
+			<input type="text" ng-model="first" />
+			<input type="text" ng-model="second" />
+
+			<button ng-click="updateHypotenuse()">Sum</button>
+			<br><br>
+
+			{{hypotenuse}}
+
+		</div>
+		<div ng-controller="ctrl2">
+			<ul>
+				<li ng-repeat = "course in courses">{{course}}</li>
+			</ul>
+
+			<h1> Random Course 1</h1>
+			<p>{{rancourse}}</p>
+		</div>
+		<div ng-controller="ctrl3">
+			<h1> Random Course 2 </h1>
+			<p>{{rancourse}}</p>
+		</div>
+		<div ng-controller="ctrl4">
+			<ol>
+				<li ng-repeat = "course2 in courses2">{{course2}}</li>
+			</ol>
+		</div>
+
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+	  <script src="js/angulara.js"></script>
+
+	</body>
+</html>
+
