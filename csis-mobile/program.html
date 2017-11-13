@@ -2,7 +2,7 @@
 <html> 
 
 	<head> 
-	
+
 		<title>Basic mobile app</title> 
 		<meta charset="utf-8" />  
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -11,77 +11,93 @@
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="css/nmccarth.css" />
 	</head> 
-	
+
 	<body> 
 		<!-- Navigation -->
-    		<nav class="navbar  navbar-dark bg-dark fixed-top">
-      			<div class="container">
+		<nav class="navbar  navbar-dark bg-dark fixed-top">
+			<div class="container">
 				<span>
 					<button onClick="goBack()" class="btn bg-inverse" type="button" aria-expanded="false" aria-label="Go Back">
 						<i class="fa fa-arrow-left bg-inverse" aria-hidden="true" ></i>
 					</button>
 					<a class="navbar-brand" href="#" style="padding-left: 5px;">CSIS at SVSU</a>
 				</span>
-        			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          				<span class="navbar-toggler-icon"></span>
-        			</button>
-        			<div class="collapse navbar-collapse" id="navbarResponsive">
-          				<ul class="navbar-nav ml-auto">
-            					<li class="nav-item">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="about.html">About</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="news.html">News</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="contact.html">Contact</a>
-            					</li>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="mission.html">Mission Statement</a>
-            					</li>
+							<a class="nav-link" href="about.html">About</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="program.html">Program Requirements</a>
-            					</li>
+							<a class="nav-link" href="news.html">News</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="course.html">Course Sequence</a>
-            					</li>
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="career.html">Careers</a>
-            					</li>
+							<a class="nav-link" href="mission.html">Mission Statement</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="faculty.html">Faculty</a>
-            					</li>
+							<a class="nav-link" href="program.html">Program Requirements</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="why.html">Why study CSIS?</a>
-            					</li>
-          				</ul>
-        			</div>
-      			</div>
-    		</nav>
+							<a class="nav-link" href="course.html">Course Sequence</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="career.html">Careers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="faculty.html">Faculty</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="why.html">Why study CSIS?</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		<!-- page content -->
-		<div id="wrapper" class="container">
+		<div id="wrapper" class="container center">
+			<div id="majortabs">
+				<ul class="nav nav-pills nav-fill bg-dark">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="pill" href="#1a">Computer Information Systems Major</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"  data-toggle="pill" href="#2a">Computer Science Major</a>
+					</li>
+				</ul>
+				<div class="tab-content list-group-item">
+					<div class="tab-pane fade show active" id="1a">
+						<p> test11 </p>
+					</div>
+					<div class="tab-pane fade" id="2a">
+						<p> test2 </p>
+					</div>
+				</div>
+			</div>		
 
-		</div>		
 
+			<!-- Footer -->
+			<footer class="navbar bg-dark fixed-bottom">
+				<div class="container">
+					<p class="m-0 text-center text-white">Footer Content</p>
+				</div>
+			</footer>
 
-		 <!-- Footer -->
-    		<footer class="navbar bg-dark fixed-bottom">
-      			<div class="container">
-        			<p class="m-0 text-center text-white">Footer Content</p>
-      			</div>
-    		</footer>
+			<!-- Javascript at end -->
+			<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
-		<!-- Javascript at end -->
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-
-		<!-- custom javascript -->
-		<script type="text/javascript" src="js/nmccarth.js"</script>
-		<script type="text/javascript" src="js/nmccarth.js"</script> <!-- this file doesn't get used by web browser unless I include it twice -->   
+			<!-- custom javascript -->
+			<script type="text/javascript" src="js/nmccarth.js"</script>
+			<script type="text/javascript" src="js/nmccarth.js"</script> <!-- this file doesn't get used by web browser unless I include it twice -->   
 
 	</body>
 </html>
