@@ -56,3 +56,8 @@ li a:link { color: #FFFFFF; }
 li a:hover { color: #FFFFFF; }
 li a:visited { color: #FFFFFF; }
 li a:active { color: #FFFFFF; }
+
+
+img {
+	max-width: 100%;
+}
