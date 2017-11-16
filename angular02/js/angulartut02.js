@@ -65,12 +65,26 @@ app4.controller('eventCtrl', function($scope) {
 				if (i == 0) {
 					req.open('GET', url, true);
 					req.send();
-					sleep(500);
+					sleep(100);
+				} else {
+					$scope.getJson(url);
+				}
+			}
+			$scope.courses = jsonObj.courses;
+		} else if(/^[a-zA-Z,]+$/.test(prefix)) {
+			var splitprefix = prefix.split(",");
+			for(var i = 0; i < splitprefix.length; i++){
+				url = baseurl + splitprefix[i] + endurl;
+				if (i == 0) {
+					req.open('GET', url, true);
+					req.send();
+					sleep(100);
 				} else {
 					$scope.getJson(url);
 				}
 			}
 			$scope.courses = jsonObj.courses;
 		}
+
 	}
 });
