@@ -25,7 +25,7 @@ function sleep(milliseconds) {
   }
    // alert("woke up!");
 }
-sleep(500);
+sleep(750);
 
 
 //adding this to the page with javascript seems to get rid of leading problems
@@ -52,8 +52,8 @@ app4.controller('eventCtrl', function($scope) {
 	$scope.courses = jsonObj.courses;
 	$scope.updatePrefix = function() {
 		prefix = document.getElementById("prefix").value;
+		if (prefix == '') prefix = "CS";
 		if(/^[a-zA-Z]+$/.test(prefix)) {
-			if (prefix == '') prefix = "CS";
 			url = baseurl + prefix + endurl;
 			req.open('GET', url, true);
 			req.send();
