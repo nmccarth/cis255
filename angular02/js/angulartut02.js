@@ -62,9 +62,10 @@ app4.controller('eventCtrl', function($scope) {
 			var splitprefix = prefix.split(" ");
 			for(var i = 0; i < splitprefix.length; i++){
 				url = baseurl + splitprefix[i] + endurl;
-				if (prefix == 0) {
+				if (i == 0) {
 					req.open('GET', url, true);
 					req.send();
+					sleep(500);
 				} else {
 					$scope.getJson(url);
 				}
