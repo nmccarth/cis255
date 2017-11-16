@@ -25,56 +25,43 @@ function sleep(milliseconds) {
   }
    // alert("woke up!");
 }
-sleep(1000);
+sleep(3000);
 
-function updatePrefix() {
-		prefix = document.getElementById("prefix").value;
-		url = baseurl + prefix + endurl;
-		req.open('GET', url, true);
-		req.send();
-	}
+var mydiv = document.getElementById("myclasses");
+mydiv.innerHTML += '<table><tr ng-repeat="course in courses" ng-class="{stripedblue:  course.courseNumber % 2 == 0, stripedbeige: course.courseNumber % 2 != 0}"> <td>{{course.prefix}}</td><td>{{course.courseNumber}}</td></tr></table>'
 
+// console.log(typeof jsonObj);
+// while(jsonObj === undefined) {
+// 	console.log(typeof jsonObj);
+// 	sleep(100);
+// }
 
 // Define the AngularJS Module
 var app4 = angular.module('app4', []);
 
 // Define the Controller and implement the Scope
 app4.controller('eventCtrl', function($scope) {
-  $scope.blur = 0;
-  $scope.click = 0;
-  $scope.dblclick = 0;
-  $scope.copy = 0;
-  $scope.paste = 0;
-  $scope.cut = 0;
-  $scope.focus = 0;
-  $scope.change = 0;
-  $scope.keydown = function(e) {
-	// Works for the basic characters and numbers
-	$scope.kdKey = String.fromCharCode(e.keyCode);
-  };
-  $scope.mouseenter = 0;
-  $scope.mouseleave = 0;
-
-  // Used to disable button
-  $scope.disableButton = true;
-
-  // Used to show and hide elements
-  $scope.daytimeButton = true;
-
-  // Used for table
-  $scope.capitals = [
-	{"City": "Montgomery",
-	"State": "Alabama"},
-	{"City": "Juneau",
-	"State": "Alaska"},
-	{"City": "Phoenix",
-	"State": "Arizona"},
-	{"City": "Little Rock",
-	"State": "Arkansas"}
-  ];
   
- 	$scope.courses = jsonObj.courses;
-		
+// 	var flag = true;
+// 	while(flag) {
+// 		if(typeof jsonObj === undefined){ 
+// 			sleep(500);
+// 			console.log("waiting");
+// 		} else {
+// 			$scope.courses = jsonObj.courses;
+// 			flag = false;
+// 		}
+// 	}
+
+
 	
-	
+	$scope.courses = jsonObj.courses;
+	$scope.updatePrefix = function() {
+		prefix = document.getElementById("prefix").value;
+		if (prefix == '') prefix = "CS";
+		url = baseurl + prefix + endurl;
+		req.open('GET', url, true);
+		req.send();
+		$scope.courses = jsonObj.courses;
+	}
 });
