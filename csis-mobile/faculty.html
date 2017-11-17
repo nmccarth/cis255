@@ -2,7 +2,7 @@
 <html> 
 
 	<head> 
-	
+
 		<title>Basic mobile app</title> 
 		<meta charset="utf-8" />  
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -11,69 +11,179 @@
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="css/nmccarth.css" />
 	</head> 
-	
+
 	<body> 
 		<!-- Navigation -->
-    		<nav class="navbar  navbar-dark bg-dark fixed-top">
-      			<div class="container">
+		<nav class="navbar  navbar-dark bg-dark fixed-top">
+			<div class="container">
 				<span>
 					<button onClick="goBack()" class="btn bg-inverse" type="button" aria-expanded="false" aria-label="Go Back">
 						<i class="fa fa-arrow-left bg-inverse" aria-hidden="true" ></i>
 					</button>
 					<a class="navbar-brand" href="#" style="padding-left: 5px;">CSIS at SVSU</a>
 				</span>
-        			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          				<span class="navbar-toggler-icon"></span>
-        			</button>
-        			<div class="collapse navbar-collapse" id="navbarResponsive">
-          				<ul class="navbar-nav ml-auto">
-            					<li class="nav-item">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="about.html">About</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="news.html">News</a>
-            					</li>
-            					<li class="nav-item">
-              						<a class="nav-link" href="contact.html">Contact</a>
-            					</li>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="mission.html">Mission Statement</a>
-            					</li>
+							<a class="nav-link" href="about.html">About</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="program.html">Program Requirements</a>
-            					</li>
+							<a class="nav-link" href="news.html">News</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="course.html">Course Sequence</a>
-            					</li>
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="career.html">Careers</a>
-            					</li>
+							<a class="nav-link" href="mission.html">Mission Statement</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="faculty.html">Faculty</a>
-            					</li>
+							<a class="nav-link" href="program.html">Program Requirements</a>
+						</li>
 						<li class="nav-item">
-              						<a class="nav-link" href="why.html">Why study CSIS?</a>
-            					</li>
-          				</ul>
-        			</div>
-      			</div>
-    		</nav>
+							<a class="nav-link" href="course.html">Course Sequence</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="career.html">Careers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="faculty.html">Faculty</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="why.html">Why study CSIS?</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		<!-- page content -->
-		<div id="wrapper" class="container">
+		<div id="wrapper" class="container center">
+			<div class="pt-5"></div>
+			<div id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="card">
+					<div class="card-header bg-dark" role="tab" id="headingOne">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<h5 class="mb-0">
+								Department Chair
+							</h5>
+						</a>
+					</div>
 
-		</div>		
+					<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+						<div class="card-block">
+							<img class="pull-left profile" src="images/cho.jpeg" alt="Il-Hyung Cho"> 
+							Il-Hyung Cho<br>
+							Associate Professor of Computer Science &amp; Information Systems<br>
+							<hr>
+							Science East 178<br>
+							989-964-2044<br>
+							icho@svsu.edu<br>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-dark" role="tab" id="headingTwo">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+							<h5 class="mb-0">
+								Office of the Dean, College of Science Engineering &amp; Technology
+							</h5>
+						</a>
+					</div>
+
+					<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
+						<div class="card-block">
+							<div class="l1">
+								<img class="pull-left profile" src="images/hall.jpeg" alt="Frank Hall"> 
+								Frank Hall<br>
+								Dean of the College of Science Engineering &amp; Technology<br>
+								<hr>
+								Pioneer Hall 236B<br>
+								989-964-4144<br>
+								frhall@svsu.edu<br>
+							</div>
+							<div class="r1">
+								<img class="pull-left profile" src="images/chubb.jpeg" alt="Andrew M Chubb"> 
+								Andrew M Chubb<br>
+								Associate Dean of the College of Science Engineering &amp; Technology<br>
+								<hr> 
+								Pioneer Hall 236<br>
+								989-964-4144<br>
+								achubb@svsu.edu<br>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-dark" role="tab" id="headingThree">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+							<h5 class="mb-0">
+								Faculty
+							</h5>
+						</a>
+					</div>
+
+					<div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
+						<div class="card-block">
+							<div class="l1">
+								<img class="pull-left profile" src="images/bidgoli.jpeg" alt="Moe Bidgoli"> 
+								Moe Bigdoli<br>
+								Associate Professor of Computer Science &amp; Information Systems<br>
+								<hr>
+								Science East 175<br>
+								989-964-4198<br>
+								bidgoli@svsu.edu<br>
+							</div>
+							<div class="r1">
+								<img class="pull-left profile" src="images/cho.jpeg" alt="Il-Hyung Cho"> 
+								Il-Hyung Cho<br>
+								Associate Professor of Computer Science &amp; Information Systems<br>
+								<hr>
+								Science East 178<br>
+								989-964-2043<br>
+								icho@svsu.edu<br>													
+							</div><br>
+							<div class="l1">
+								<img class="pull-left profile" src="images/corser.jpeg" alt="George Corser"> 
+								George Corser<br>
+								Assistant Professor of Computer Science &amp; Information Systems<br>
+								<hr>
+								Science East 179<br>
+								989-964-4198<br>
+								gpcorser@svsu.edu<br>
+							</div>
+							<div class="r1">
+								<img class="pull-left profile" src="images/dharam.jpeg" alt="George Corser"> 
+								Poonam Dharam<br>
+								Assistant Professor of Computer Science &amp; Information Systems<br>
+								<hr>
+								Science East 172<br>
+								989-964-4191<br>
+								pdharam@svsu.edu<br>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
 
 
-		 <!-- Footer -->
-    		<footer class="navbar bg-dark fixed-bottom">
-      			<div class="container">
-        			<p class="m-0 text-center text-white">Footer Content</p>
-      			</div>
-    		</footer>
+			</div>		
+		</div>
+
+
+		<!-- Footer -->
+		<footer class="navbar bg-dark fixed-bottom">
+			<div class="container">
+				<p class="m-0 text-center text-white">Footer Content</p>
+			</div>
+		</footer>
 
 		<!-- Javascript at end -->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
