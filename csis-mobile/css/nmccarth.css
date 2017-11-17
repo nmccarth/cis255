@@ -51,13 +51,30 @@ div.scrollmenu a:hover {
 	background-color: #990000;
 }
 
-li a { color: #FFFFFF; }
-li a:link { color: #FFFFFF; }
-li a:hover { color: #FFFFFF; }
-li a:visited { color: #FFFFFF; }
-li a:active { color: #FFFFFF; }
+a { color: #FFFFFF; }
+a:link { color: #FFFFFF; }
+a:hover { color: #FFFFFF; text-decoration: none; }
+a:visited { color: #FFFFFF; }
+a:active { color: #FFFFFF; text-decoration: none;}
 
 
-img {
+.seq {
 	max-width: 100%;
 }
+
+.profile {
+	padding: 5px 5px 5px 1px;
+}
+
+.l1 {
+	width: 48%; 
+	display: inline-block;
+	float: left;
+}
+
+.r1 {
+	width: 48%; 
+	display: inline-block;
+	float: right;
+}
+
