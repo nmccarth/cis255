@@ -84,7 +84,8 @@ app4.controller('eventCtrl', function($scope) {
 				}
 			}
 			$scope.courses = jsonObj.courses;
+		} else {
+			alert('Invalid prefix: '+prefix);
 		}
-
 	}
 });
