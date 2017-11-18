@@ -56,6 +56,7 @@ app4.controller('eventCtrl', function($scope) {
 		});
 		return a2;
 	}
+
 	
 	$scope.courses = jsonObj.courses;
 	$scope.updatePrefix = function() {
