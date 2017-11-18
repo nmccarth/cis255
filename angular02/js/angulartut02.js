@@ -48,18 +48,33 @@ app4.controller('eventCtrl', function($scope) {
 			//jsonObj = [{"courses": old.concat(new1)}];
 		})
 	};
+
+	$scope.rDupes = function(a) {
+		var a2 = [];
+		jQuery.each(a, function(i, el){
+			if(jQuery.inArray(el, a2) === -1) a2.push(el);
+		});
+		return a2;
+	}
 	
 	$scope.courses = jsonObj.courses;
 	$scope.updatePrefix = function() {
 		prefix = document.getElementById("prefix").value;
-		if (prefix == '') prefix = "CS";
-		if(/^[a-zA-Z]+$/.test(prefix)) {
+		prefix = prefix.trim(); //remove trailing whitespace
+		prefix = prefix.replace(/\s\s+/g, ' '); //replace multiple spaces with single spaces
+		if (prefix == '') { //if they enter no prefix return all
+			url = baseurl.substring(0,29) + endurl.substring(1);
+			req.open('GET', url, true);
+			req.send();
+			$scope.courses = jsonObj.courses;
+		} else if(/^[a-zA-Z]+$/.test(prefix)) { //single prefix
 			url = baseurl + prefix + endurl;
 			req.open('GET', url, true);
 			req.send();
 			$scope.courses = jsonObj.courses;
-		} else if(/^[a-zA-Z\s]+$/.test(prefix)) {
+		} else if(/^[a-zA-Z\s]+$/.test(prefix)) { //space deliniated prefixes
 			var splitprefix = prefix.split(" ");
+			splitprefix = $scope.rDupes(splitprefix); //remove duplicates from prefixes
 			for(var i = 0; i < splitprefix.length; i++){
 				url = baseurl + splitprefix[i] + endurl;
 				if (i == 0) {
@@ -71,8 +86,11 @@ app4.controller('eventCtrl', function($scope) {
 				}
 			}
 			$scope.courses = jsonObj.courses;
-		} else if(/^[a-zA-Z,]+$/.test(prefix)) {
+		} else if(/^[a-zA-Z,]+$/.test(prefix)) { //comma deliniated prefixes
+			prefix = prefix.replace(/,,+/g, ',') //replace double commas with single commas
+			prefix = (prefix.replace(/^,+|,+$/,'')).replace(/^,+|,+$/,''); //remove trailing commas
 			var splitprefix = prefix.split(",");
+			splitprefix = $scope.rDupes(splitprefix); //remove duplicates from prefixes
 			for(var i = 0; i < splitprefix.length; i++){
 				url = baseurl + splitprefix[i] + endurl;
 				if (i == 0) {
