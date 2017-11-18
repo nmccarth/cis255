@@ -78,3 +78,11 @@ div.scrollmenu a:hover {
 	float: right;
 }
 
+.logo {
+	display: inline-block;
+	width: auto;
+	max-height: 40px;
+	margin: 0 auto;
+	padding-top: 0;
+	padding-bottom: 0;
+}
