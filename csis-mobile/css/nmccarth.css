@@ -51,11 +51,11 @@ div.scrollmenu a:hover {
 	background-color: #990000;
 }
 
-a { color: #FFFFFF; }
-a:link { color: #FFFFFF; }
-a:hover { color: #FFFFFF; text-decoration: none; }
-a:visited { color: #FFFFFF; }
-a:active { color: #FFFFFF; text-decoration: none;}
+.wl { color: #FFFFFF; }
+.wl:link { color: #FFFFFF; }
+.wl:hover { color: #FFFFFF; text-decoration: none; }
+.wl:visited { color: #FFFFFF; }
+.wl:active { color: #FFFFFF; text-decoration: none;}
 
 
 .seq {
