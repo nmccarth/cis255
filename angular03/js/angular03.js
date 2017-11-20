@@ -21,6 +21,7 @@ app5.controller('userCtrl', function($scope) {
 		delivery: "Email"
 	}];
 
+
 	$scope.findZip = function() {
 		var zip = document.getElementById('zip').value;
 		if(!/^\d{5}$/.test(zip)) {
@@ -43,7 +44,29 @@ app5.controller('userCtrl', function($scope) {
 			}
 		});
 
-	}
+	};
+
+	$scope.formatPhone = function() {
+		var phone =  document.getElementById('pNumber').value;
+
+		phone = phone.replace(/[^\d]/g, "");
+		if (phone.length == 10) {
+			phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+			jQuery('[name=pNumber]').val(phone);
+		} else if (phone.length == 11) {
+			phone = "+"+phone.replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, "$1 ($2) $3-$4");
+			jQuery('[name=pNumber]').val(phone);
+		} else if (phone.length == 12) {
+			phone = "+"+phone.replace(/(\d{2})(\d{3})(\d{3})(\d{4})/, "$1 ($2) $3-$4");
+			jQuery('[name=pNumber]').val(phone);
+		} else if (phone.length == 13) {
+			phone = "+"+phone.replace(/(\d{3})(\d{3})(\d{3})(\d{4})/, "$1 ($2) $3-$4");
+			jQuery('[name=pNumber]').val(phone);
+		}
+
+
+
+	};
 
 	$scope.saveUser = function(userInfo) {
 		if($scope.userForm.$valid) {
