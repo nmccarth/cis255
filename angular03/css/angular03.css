@@ -1,0 +1,18 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none;
+}
+table{
+	width: 400px;
+	text-align: left;
+	border: 2px solid black;
+	padding: 10px;
+}
+input.ng-dirty.ng-invalid {
+	border-color: red;
+}
+
+label {
+	display: inline-block;
+	width: 120px;
+	text-align: right:
+}

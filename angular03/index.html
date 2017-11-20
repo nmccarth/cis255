@@ -1,0 +1,127 @@
+<!doctype html
+<html ng-app="app5" ng-cloak>
+	<head>
+		<meta charset="utf8">
+		<title>AngularJS Tutorial 5</title>
+		<link rel="stylesheet" type="text/css"  href="css/angular03.css">
+	</head>
+	<body>
+
+		<div ng-controller="userCtrl">
+
+			<!-- Pass the user data to saveUser() -->
+			<form action="angulartut5.php" name="userForm" ng-submit="saveUser(userInfo)">
+				<label>First Name:</label>
+
+				<input type="text" name="fName" ng-model="userInfo.fName"
+				    ng-required="true" ng-minlength="2" />
+
+				<!--
+				<span class="error-message" ng-show="userForm.fName.$dirty
+				&& userForm.fName.$error.required">Must Enter a First Name
+				</span>
+
+				<span class="error-message" ng-show="userForm.fName.$dirty
+					&& userForm.fName.$error.minlength">
+					Must be a Minimum of 2 Characters
+				</span>
+				-->
+
+				<br><br>
+
+				<label>Last Name:</label>
+
+				<input type="text" name="lName" ng-model="userInfo.lName"
+				    ng-required="true" ng-minlength="2" />
+
+				<!--
+				<span class="error-message" ng-show="userForm.lName.$dirty
+				&& userForm.lName.$error.required">Must Enter a Last Name
+				</span>
+
+				<span class="error-message" ng-show="userForm.lName.$dirty
+				&& userForm.lName.$error.minlength">
+					Must be a Minimum of 2 Characters
+				</span>
+				-->
+
+
+				<br><br>
+			
+				<label>Phone Number:</label>
+
+				<input type="text" name="pNumber" ng-model="userInfo.pNumber"
+				      ng-required="true" ng-pattern="/^\(\d{3}\)\d{3}-\d{4}/">
+
+				<!--
+				<span class="error-message" ng-show="userForm.pNumber.$dirty &&
+					userForm.pNumber.$invalid">
+					Phone number must be of form "(###)###-####"
+				</span>
+				-->
+				
+				<br><br>
+
+				<label>Email:</label>
+
+				<input type="text" name="email" ng-model="userInfo.email"
+				    ng-required="true" ng-pattern="/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,10})$/">
+
+				<!--
+				<span class="error-message" ng-show="userForm.email.$dirty &&
+					userForm.email.$invalid">
+					Email must be of form "x@x.xx"
+				</span>
+				-->
+
+				<br><br>
+
+				<label>City:</label>
+
+				<input type="text" name="city" ng-model="userInfo.country" disabled>
+
+				<br><br>
+
+				<label>State:</label>
+
+				<input type="text" name="state" ng-model="userInfo.state" disabled>
+
+				<br><br>
+
+				<label>Zip code:</label>
+
+				<input id="zip" type="text" name="zip" ng-model="userInfo.zip" ng-required="true"
+					ng-pattern="/\d{5}/" ng-blur="findZip()">
+
+				<!--
+				<span class="error-message" ng-show="userForm.zip.$dirty &&
+					userForm.zip.$invalid">
+					Zip code must be of from "#####"
+				</span>
+				-->
+
+				<br><br>
+
+
+				<br><br>
+
+				<!-- Disable the button until every element in the form is valid -->
+				<input type="submit" value="Save" ng-disabled="userForm.$invalid"/>
+
+				<!-- Output new users 
+				<ul>
+					<li ng-repeat = "item in user">
+						{{ 'User: ' + item.fName + " " + item.lName + " " + item.street +
+						" " + item.subscribe + " " + item.delivery}}
+					</li>
+				</ul> -->
+			</form>
+		</div> <!-- End of userCtrl -->
+
+		<!-- Load JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="js/angular03.js"></script>
+
+	</body>
+</html>
