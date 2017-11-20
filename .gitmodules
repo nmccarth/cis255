@@ -1,0 +1,3 @@
+[submodule "csis-mobile/jquery.simpleWeather"]
+	path = csis-mobile/jquery.simpleWeather
+	url = git://github.com/monkeecreate/jquery.simpleWeather.git
