@@ -45,7 +45,6 @@ app4.controller('eventCtrl', function($scope) {
 			var new2 = old.concat(new1);
 			jsonObj = [];
 			jsonObj["courses"] = new2;
-			//jsonObj = [{"courses": old.concat(new1)}];
 		})
 	};
 
