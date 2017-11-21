@@ -16,9 +16,11 @@ app5.controller('userCtrl', function($scope) {
 	$scope.user= [{
 		fName: "Derek",
 		lName: "Banas",
-		street: "123 Main St",
-		subscribe: "Subscribe",
-		delivery: "Email"
+		pNumber: "(989) 964-2044",
+		email: "dbanas@ex.tld",
+		city: "Las Vegas",
+		state: "Nevada",
+		zip: "89101"
 	}];
 
 
