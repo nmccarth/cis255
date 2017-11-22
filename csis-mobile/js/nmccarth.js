@@ -37,8 +37,8 @@ jQuery().ready(function() {
 var weatherTooltip = function() {
 	var degree = jQuery("#weather").html();
 	degree = degree.substr(27,30); //Don't ask why this returns what it does
-	degree = degree.substr(0,2);
-	degree = (degree - 32) * (5 / 9);
+	degree = degree.substr(0,3);
+	degree = (degree - 32) / (1.8);
 	degree = degree.toFixed(2);
 	jQuery("#weather").attr("title", "Celsius: "+degree+"°C");
 }
