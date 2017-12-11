@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>OpenLayers Demo</title>
+		<!--
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.4.2/ol.css"		>
+		<script src="js/ol.js"></script>
+		-->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+		</style>
+	</head>
+	<!--
+	<body onload="init();">
+	--> <body>
+			<iframe width="1800" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-83.99691581726076%2C43.49816864826651%2C-83.94026756286623%2C43.526366416282976&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=15/43.5123/-83.9686">View Larger Map</a></small>
+		<!--
+		<div id="basicMap"></div>
+
+		<script>
+			function init() {
+				map = new OpenLayers.Map("basicMap");
+				var mapnik         = new OpenLayers.Layer.OSM();
+				var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+				var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+				var position       = new OpenLayers.LonLat(13.41,52.52).transform( fromProjection, toProjection);
+				var zoom           = 15; 
+
+				map.addLayer(mapnik);
+				map.setCenter(position, zoom );
+			}
+		</script>
+		-->
+	</body>
+</html>
