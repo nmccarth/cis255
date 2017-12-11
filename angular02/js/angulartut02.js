@@ -64,19 +64,26 @@ app4.controller('eventCtrl', function($scope) {
 		prefix = prefix.replace(/\s\s+/g, ' '); //replace multiple spaces with single spaces
 		if (prefix == '') { //if they enter no prefix return all
 			url = baseurl.substring(0,29) + endurl.substring(1);
+			console.log("url "+url);
 			req.open('GET', url, true);
 			req.send();
+			console.log("jsonObj: "+jsonObj);
 			$scope.courses = jsonObj.courses;
 		} else if(/^[a-zA-Z]+$/.test(prefix)) { //single prefix
 			url = baseurl + prefix + endurl;
+			console.log("prefix: "+prefix);
+			console.log("url "+url);
 			req.open('GET', url, true);
 			req.send();
+			console.log("jsonObj: "+jsonObj);
 			$scope.courses = jsonObj.courses;
 		} else if(/^[a-zA-Z\s]+$/.test(prefix)) { //space deliniated prefixes
 			var splitprefix = prefix.split(" ");
 			splitprefix = $scope.rDupes(splitprefix); //remove duplicates from prefixes
 			for(var i = 0; i < splitprefix.length; i++){
 				url = baseurl + splitprefix[i] + endurl;
+				console.log("split prefix: "+splitprefix[i]);
+				console.log("url "+url);
 				if (i == 0) {
 					req.open('GET', url, true);
 					req.send();
@@ -85,6 +92,7 @@ app4.controller('eventCtrl', function($scope) {
 					$scope.getJson(url);
 				}
 			}
+			console.log("jsonObj: "+jsonObj);
 			$scope.courses = jsonObj.courses;
 		} else if(/^[a-zA-Z,]+$/.test(prefix)) { //comma deliniated prefixes
 			prefix = prefix.replace(/,,+/g, ',') //replace double commas with single commas
@@ -93,6 +101,8 @@ app4.controller('eventCtrl', function($scope) {
 			splitprefix = $scope.rDupes(splitprefix); //remove duplicates from prefixes
 			for(var i = 0; i < splitprefix.length; i++){
 				url = baseurl + splitprefix[i] + endurl;
+				console.log("split prefix: "+splitprefix[i]);
+				console.log("url "+url);
 				if (i == 0) {
 					req.open('GET', url, true);
 					req.send();
@@ -101,6 +111,7 @@ app4.controller('eventCtrl', function($scope) {
 					$scope.getJson(url);
 				}
 			}
+			console.log("jsonObj: "+jsonObj);
 			$scope.courses = jsonObj.courses;
 		} else {
 			alert('Invalid prefix: '+prefix);
